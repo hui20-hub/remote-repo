@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        用户：<input type="text" name="username" ref="username"><br>
+        密码：<input type="password" name="password" ref="password"><br>
+        验证码：<input type="text" name="captcha" ref="captcha"><br>
+        <img :src="captchaSrc" @click="getCaptchaSrc()" /><br>
+        <input type="button" value="登录" @click="submit">
+        <div>{{loginInfo}}</div>
+    </div>
+
+    <script>
+        const appConfig = {
+            data() {
+                return {
+                    captchaSrc: "",
+                    loginInfo: ""
+                }
+            },
+            mounted() {
+                this.getCaptchaSrc()
+            },
+            methods: {
+                getCaptchaSrc() {
+                    let url = 'http:/localhost:8080/cap'
+                    axios.get(url).then(res => {
+                        if (res.data.code == 200) {
+                            this.captchaSrc = res.data.data
+                        }
+                    })
+                },
+                submit() {
+                    let url = 'http:/localhost:8080/login'
+                    let username = this.$refs.username
+                    let password = this.$refs.password
+                    let captcha = this.$refs.captcha
+                    axios
+                        .post(url, { username: username.value, password: password.value, captcha: captcha.value })
+                        .then(res => {
+                            this.loginInfo = res.data.msg
+                        })
+                }
+            },
+            created() {
+                this.getCaptchaSrc()
+            }
+        }
+        const app = Vue.createApp(appConfig);
+        app.mount("#app");
+    </script>
+</body>
+
+</html>
