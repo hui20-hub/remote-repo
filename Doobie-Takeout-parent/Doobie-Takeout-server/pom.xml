@@ -132,14 +132,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <!--
-                    1. 加密后,方法体被清空,保留方法参数、注解等信息.主要兼容swagger文档注解扫描
-                    2. 方法体被清空后,反编译只能看到方法名和注解,看不到方法体的具体内容
-                    3. 加密后的项目需要设置javaagent来启动,启动过程中解密class,完全内存解密,不留下任何解密后的文件
-                    4. 启动加密后的jar,生成xxx-encrypted.jar,这个就是加密后的jar文件,加密后不可直接执行
-                    5. 无密码启动方式,java -javaagent:xxx-encrypted.jar -jar xxx-encrypted.jar
-                    6. 有密码启动方式,java -javaagent:xxx-encrypted.jar='-pwd= 密码' -jar xxx-encrypted.jar
-                -->
                 <groupId>net.roseboy</groupId>
                 <artifactId>classfinal-maven-plugin</artifactId>
                 <version>1.2.1</version>
@@ -148,7 +140,7 @@
                     <excludes>org.spring</excludes>
                     <packages>github.com.tang</packages><!-- 加密的包名,多个包用逗号分开 -->
                     <cfgfiles>application-dev.yml</cfgfiles><!-- 加密的配置文件,多个包用逗号分开 -->
-<!--                    <libjars>hutool-all.jar</libjars> &lt;!&ndash; jar包lib下面要加密的jar依赖文件,多个包用逗号分开 &ndash;&gt;-->
+                    <libjars>hutool-all.jar</libjars><!-- jar包lib下面要加密的jar依赖文件,多个包用逗号分开 -->
                     <code>#</code> <!-- 指定机器启动,机器码 -->
                 </configuration>
                 <executions>
