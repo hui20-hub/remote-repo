@@ -149,7 +149,7 @@
                     <packages>github.com.tang</packages><!-- 加密的包名,多个包用逗号分开 -->
                     <cfgfiles>application-dev.yml</cfgfiles><!-- 加密的配置文件,多个包用逗号分开 -->
 <!--                    <libjars>hutool-all.jar</libjars> &lt;!&ndash; jar包lib下面要加密的jar依赖文件,多个包用逗号分开 &ndash;&gt;-->
-                    <code>1E6B355D85E90F4A1E92417F872A8C64D41D8CD98F00B204E9800998ECF8427ED41D8CD98F00B204E9800998ECF8427E</code> <!-- 指定机器启动,机器码 -->
+                    <code>#</code> <!-- 指定机器启动,机器码 -->
                 </configuration>
                 <executions>
                     <execution>
