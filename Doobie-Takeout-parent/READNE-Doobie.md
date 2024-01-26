@@ -11,8 +11,7 @@
 | MyBatis         |    持久层框架    |          2.2.2           |                                  <https://baomidou.com/>                                   |
 | Maven           |    构建工具     |           3.9.5            |                                 <https://maven.apache.org>                                 |
 | MySQL8.0        |   关系型数据库    |          8.0.35          |                                  <https://www.mysql.com>                                   |
-| Druid           |   数据库连接池    |          1.2.20          |                             <https://github.com/alibaba/druid>                             
->                                                                                            
+| Druid           |   数据库连接池    |          1.2.20          |                             <https://github.com/alibaba/druid>                                                                                                                       
 | Redis           |  非关系型内存数据库  |                          |                                     <https://redis.io>                                     |
 | Slf4j           |   门面日志框架    |                          |                                  <https://www.slf4j.org>                                   |
 | `RESTful`       |    接口规范     |                          |                                 <https://restfulapi.net/>                                  |
