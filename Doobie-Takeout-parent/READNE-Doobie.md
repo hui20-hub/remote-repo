@@ -24,7 +24,7 @@
 
 - IDE: IntelliJ IDEA 2023
 - SDK: JDK 1.8+
-- OS: Ubuntu 22.04LTS
+- Redis：7.0+
 - MySQL: 8.0+
 - Maven: 3.9+
 - 数据库可视化工具： Navicat 16 for MySQL
